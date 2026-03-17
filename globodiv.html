@@ -1,5 +1,4 @@
-
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -22,19 +21,27 @@
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
-        /* Seção Principal */
+        /* ── Seção Principal ── */
         .main-news {
             position: relative;
-            height: 400px;
-            background: url('https://via.placeholder.com/800x400') center/cover; 
-            display: flex;
-            align-items: flex-end;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .main-news img {
+            width: 100%;
+            height: auto;
+            display: block;
+            object-fit: cover;
         }
 
         .main-news-overlay {
-            background: linear-gradient(transparent, rgba(0,0,0,0.8));
-            width: 100%;
-            padding: 20px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 40px 20px 20px;
+            background: linear-gradient(transparent, rgba(0,0,0,0.75));
             color: white;
         }
 
@@ -45,7 +52,7 @@
             font-weight: bold;
         }
 
-        /* Barra Vermelha */
+        /* ── Barra Vermelha ── */
         .red-bar {
             background-color: #b31d1d;
             color: white;
@@ -69,7 +76,7 @@
             color: #ff9999;
         }
 
-        /* Grade de Notícias Inferior */
+        /* ── Grade de Notícias Inferior ── */
         .news-grid {
             display: flex;
             padding: 20px;
@@ -111,45 +118,53 @@
             position: absolute;
             left: 0;
         }
+
+        /* ── Responsividade ── */
+        @media (max-width: 580px) {
+            .news-grid    { flex-direction: column; }
+            .red-bar      { flex-direction: column; gap: 10px; }
+            .main-news-overlay h1 { font-size: 20px; }
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
+
+    <!-- IMAGEM PRINCIPAL -->
     <div class="main-news">
-        <div class="main-news-overlay">
-           
-              <center><img src="trump.png"/></center>
+        <img src="trump.png"/>
+        <div class="main-news-overlay">   
         </div>
     </div>
 
+    <!-- BARRA VERMELHA -->
     <div class="red-bar">
         <div class="red-bar-item">Israel ataca reunião que definiria o novo líder do Irã, diz jornal</div>
         <div class="red-bar-item">Agência: estrondos são ouvidos em Dubai, Abu Dhabi e Doha; SIGA</div>
         <div class="red-bar-item">General do Irã ameaça centros econômicos do Oriente Médio</div>
     </div>
 
+    <!-- CARDS INFERIORES -->
     <div class="news-grid">
         <div class="news-card">
-            <img src= "ira.png"> 
+            <img src="ira.png" alt="Funeral no Irã">
             <h2>Multidão no Irã vai a funeral de crianças; ONU pede apuração</h2>
             <p>Escalada nuclear pode ser fatal, diz especialista</p>
         </div>
-
         <div class="news-card">
-            <img src="ameca_trump.png"/>
+            <img src="ameca_trump.png" alt="Trump e Espanha">
             <h2>Trump ameaça usar bases da Espanha sem autorização</h2>
             <p>O que está por trás do conflito entre EUA e Irã?</p>
         </div>
-
         <div class="news-card">
-            <img src="aviao.png"/>
+            <img src="aviao.png" alt="Drones e mísseis">
             <h2>Valores da guerra: drones de US$ 20 mil x mísseis de US$ 4 mi</h2>
             <p>Emirados criam corredor de segurança para voos</p>
         </div>
     </div>
+
 </div>
 
 </body>
 </html>
-
