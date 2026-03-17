@@ -1,0 +1,155 @@
+
+<<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout de Notícias</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Seção Principal */
+        .main-news {
+            position: relative;
+            height: 400px;
+            background: url('https://via.placeholder.com/800x400') center/cover; 
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .main-news-overlay {
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            width: 100%;
+            padding: 20px;
+            color: white;
+        }
+
+        .main-news-overlay h1 {
+            font-size: 28px;
+            margin: 0;
+            line-height: 1.2;
+            font-weight: bold;
+        }
+
+        /* Barra Vermelha */
+        .red-bar {
+            background-color: #b31d1d;
+            color: white;
+            padding: 15px;
+            display: flex;
+            gap: 20px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .red-bar-item {
+            flex: 1;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .red-bar-item::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #ff9999;
+        }
+
+        /* Grade de Notícias Inferior */
+        .news-grid {
+            display: flex;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        .news-card {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .news-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .news-card h2 {
+            font-size: 18px;
+            color: #b31d1d;
+            margin: 0 0 10px 0;
+            line-height: 1.2;
+        }
+
+        .news-card p {
+            font-size: 13px;
+            color: #333;
+            margin: 0;
+            position: relative;
+            padding-left: 12px;
+        }
+
+        .news-card p::before {
+            content: "•";
+            color: #b31d1d;
+            position: absolute;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="main-news">
+        <div class="main-news-overlay">
+           
+              <center><img src="trump.png"/></center>
+        </div>
+    </div>
+
+    <div class="red-bar">
+        <div class="red-bar-item">Israel ataca reunião que definiria o novo líder do Irã, diz jornal</div>
+        <div class="red-bar-item">Agência: estrondos são ouvidos em Dubai, Abu Dhabi e Doha; SIGA</div>
+        <div class="red-bar-item">General do Irã ameaça centros econômicos do Oriente Médio</div>
+    </div>
+
+    <div class="news-grid">
+        <div class="news-card">
+            <img src= "ira.png"> 
+            <h2>Multidão no Irã vai a funeral de crianças; ONU pede apuração</h2>
+            <p>Escalada nuclear pode ser fatal, diz especialista</p>
+        </div>
+
+        <div class="news-card">
+            <img src="ameca_trump.png"/>
+            <h2>Trump ameaça usar bases da Espanha sem autorização</h2>
+            <p>O que está por trás do conflito entre EUA e Irã?</p>
+        </div>
+
+        <div class="news-card">
+            <img src="aviao.png"/>
+            <h2>Valores da guerra: drones de US$ 20 mil x mísseis de US$ 4 mi</h2>
+            <p>Emirados criam corredor de segurança para voos</p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+
